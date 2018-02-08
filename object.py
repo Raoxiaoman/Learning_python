@@ -4,7 +4,7 @@
 class person(object):
 
     """class for person"""
-
+    __slot__ = ("name","age")
     def __init__(self,name,age):
         """TODO: to be defined1.
 
@@ -46,24 +46,30 @@ class student(person):
         else:
             return 'D'
         
-    def getScore(self):
+    @property
+    def score(self):
         """get Score
         :returns: TODO
 
         """
-        return _score
-    def setScore(self,score):
+        return self._score
+
+    @score.setter
+    def score(self,score):
         """set Score
         :returns: TODO
 
         """
         if score <= 100 and score > 0:
             self._score = score
+        else:
+            print("error")
         
 stu = student("raohui",20,100) 
 stu.print();
 
-print(stu.get_grade())
+print(stu.score)
+stu.score = 101
 print(stu.__dict__)
 # print(dir(stu))
 if hasattr(stu,'_age'):
