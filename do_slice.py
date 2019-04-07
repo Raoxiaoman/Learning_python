@@ -11,5 +11,6 @@ print(L[-10:])
 print(L[::5])
 
 T=(L[::5],)
-print(T[::5])
+print(T[::5]
+
 

@@ -6,6 +6,8 @@ import sys
 def print_error(lines):
     for line in lines:
         print(line)
+        
+
 
 def for_check(path,fname):
     files = os.listdir(path)
